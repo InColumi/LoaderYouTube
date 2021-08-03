@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LoaderYouTube
 {
-    public partial class StartMenu : Form
+    public partial class Authorization : Form
     {
         #region DragWindow
         private const int WM_NCHITTEST = 0x84;
@@ -33,16 +33,10 @@ namespace LoaderYouTube
             base.WndProc(ref m);
         }
         #endregion
-        public StartMenu(Form form)
+
+        public Authorization()
         {
-            this.Owner = form;
             InitializeComponent();
-        }
-
-
-        private void labelExit_MouseLeave(object sender, EventArgs e)
-        {
-            labelExit.ForeColor = Color.FromArgb(231, 229, 234);
         }
 
         private void labelExit_MouseEnter(object sender, EventArgs e)
@@ -53,6 +47,29 @@ namespace LoaderYouTube
         private void labelExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonSign_Click(object sender, EventArgs e)
+        {
+            new StartMenu(this.Owner).Show();
+            
+        }
+
+        private void labelExit_MouseLeave(object sender, EventArgs e)
+        {
+            labelExit.ForeColor = Color.AliceBlue;
+        }
+
+        private async void Authorization_Shown(object sender, EventArgs e)
+        {
+            double opasity = 0.97;
+            Opacity = 0;
+            for (double i = 0.1; Opacity < opasity; i += 0.01)
+            {
+                Opacity += i;
+                await Task.Delay(40);
+            }
+            Opacity = opasity;
         }
     }
 }
