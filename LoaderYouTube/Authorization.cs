@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LoaderYouTube.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,7 +35,6 @@ namespace LoaderYouTube
             base.WndProc(ref m);
         }
         #endregion
-
         public Authorization()
         {
             InitializeComponent();
@@ -49,10 +50,42 @@ namespace LoaderYouTube
             Application.Exit();
         }
 
+        private void ShowStartMenu()
+        {
+            StartMenu startMenu = new StartMenu(this);
+            startMenu.Show();
+            Shower.Form(startMenu);
+            this.Visible = false;
+        }
+
+        private bool CheckCorrectMail()
+        {
+            string mail = textBoxMail.Text;
+            if (mail.Contains('@') && mail.Contains('.'))
+            {
+                return true;
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show(
+                    this,
+                    "Некорректный адрес почты. Будем гуглить ?",
+                    "Внимательность",
+                    MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Process.Start(@"https://www.google.com/search?q=%D0%BA%D0%B0%D0%BA+%D0%B2%D1%8B%D0%B3%D0%BB%D1%8F%D0%B4%D0%B8%D1%82+%D0%B0%D0%B4%D1%80%D0%B5%D1%81+%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9+%D0%BF%D0%BE%D1%87%D1%82%D1%8B&source=lmns&bih=868&biw=1768&hl=ru&sa=X&ved=2ahUKEwiysuuoiJfyAhXSwyoKHW0RA_AQ_AUoAHoECAEQAA"); 
+                }
+                return false;
+            }
+        }
+
         private void buttonSign_Click(object sender, EventArgs e)
         {
-            new StartMenu(this.Owner).Show();
-            
+            if (CheckCorrectMail())
+            {
+                ShowStartMenu();
+            }
         }
 
         private void labelExit_MouseLeave(object sender, EventArgs e)
@@ -60,16 +93,30 @@ namespace LoaderYouTube
             labelExit.ForeColor = Color.AliceBlue;
         }
 
-        private async void Authorization_Shown(object sender, EventArgs e)
+        private void Authorization_Shown(object sender, EventArgs e)
         {
-            double opasity = 0.97;
-            Opacity = 0;
-            for (double i = 0.1; Opacity < opasity; i += 0.01)
+            Shower.Form(this);
+        }
+
+        private void textBoxPassword_Enter(object sender, EventArgs e)
+        {
+            textBoxPassword.PasswordChar = '#';
+        }
+
+        private void textBoxPassword_Leave(object sender, EventArgs e)
+        {
+            if (textBoxPassword.Text == string.Empty)
             {
-                Opacity += i;
-                await Task.Delay(40);
+                textBoxPassword.Text = "введите пароль";
             }
-            Opacity = opasity;
+        }
+
+        private void textBoxMail_Leave(object sender, EventArgs e)
+        {
+            if (textBoxMail.Text == string.Empty)
+            {
+                textBoxMail.Text = "введите почту";
+            }
         }
     }
 }

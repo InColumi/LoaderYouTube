@@ -65,6 +65,7 @@ namespace LoaderYouTube
             this.buttonSign.Name = "buttonSign";
             this.buttonSign.Size = new System.Drawing.Size(146, 33);
             this.buttonSign.TabIndex = 20;
+            this.buttonSign.TabStop = false;
             this.buttonSign.Text = "Войти";
             this.buttonSign.UseVisualStyleBackColor = false;
             this.buttonSign.Click += new System.EventHandler(this.buttonSign_Click);
@@ -79,7 +80,10 @@ namespace LoaderYouTube
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(338, 24);
             this.textBoxPassword.TabIndex = 17;
-            this.textBoxPassword.Text = "введите пароль";
+            this.textBoxPassword.TabStop = false;
+            this.textBoxPassword.Text = "050m92a02x308NEWwindows";
+            this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             // 
             // textBoxMail
             // 
@@ -91,7 +95,9 @@ namespace LoaderYouTube
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(338, 24);
             this.textBoxMail.TabIndex = 16;
-            this.textBoxMail.Text = "введите почту";
+            this.textBoxMail.TabStop = false;
+            this.textBoxMail.Text = "newwindows77648@gmail.com";
+            this.textBoxMail.Leave += new System.EventHandler(this.textBoxMail_Leave);
             // 
             // label1
             // 
@@ -164,10 +170,10 @@ namespace LoaderYouTube
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonSign;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label labelExit;
+        public System.Windows.Forms.TextBox textBoxPassword;
+        public System.Windows.Forms.TextBox textBoxMail;
     }
 }

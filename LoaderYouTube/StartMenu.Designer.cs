@@ -30,6 +30,9 @@ namespace LoaderYouTube
         private void InitializeComponent()
         {
             this.panelWork = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonStartLoad = new System.Windows.Forms.Button();
+            this.buttonAbort = new System.Windows.Forms.Button();
             this.panelDragAndDrop = new System.Windows.Forms.Panel();
             this.panelStarusLoader = new System.Windows.Forms.Panel();
             this.panelDiscription = new System.Windows.Forms.Panel();
@@ -43,9 +46,6 @@ namespace LoaderYouTube
             this.labelTitle = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.labelExit = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonAbort = new System.Windows.Forms.Button();
-            this.buttonStartLoad = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelChanelName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,10 +57,10 @@ namespace LoaderYouTube
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panelWork.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelDiscription.SuspendLayout();
             this.panelTegs.SuspendLayout();
             this.panelTitle.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,42 @@ namespace LoaderYouTube
             this.panelWork.Size = new System.Drawing.Size(1011, 713);
             this.panelWork.TabIndex = 1;
             this.panelWork.TabStop = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.buttonStartLoad);
+            this.panel1.Controls.Add(this.buttonAbort);
+            this.panel1.Location = new System.Drawing.Point(346, 642);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(613, 68);
+            this.panel1.TabIndex = 4;
+            // 
+            // buttonStartLoad
+            // 
+            this.buttonStartLoad.AutoSize = true;
+            this.buttonStartLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.buttonStartLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartLoad.Font = new System.Drawing.Font("Lucida Bright", 15F);
+            this.buttonStartLoad.Location = new System.Drawing.Point(407, 17);
+            this.buttonStartLoad.Name = "buttonStartLoad";
+            this.buttonStartLoad.Size = new System.Drawing.Size(182, 35);
+            this.buttonStartLoad.TabIndex = 1;
+            this.buttonStartLoad.Text = "Начать загрузку";
+            this.buttonStartLoad.UseVisualStyleBackColor = false;
+            // 
+            // buttonAbort
+            // 
+            this.buttonAbort.AutoSize = true;
+            this.buttonAbort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.buttonAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAbort.Font = new System.Drawing.Font("Lucida Bright", 15F);
+            this.buttonAbort.Location = new System.Drawing.Point(21, 17);
+            this.buttonAbort.Name = "buttonAbort";
+            this.buttonAbort.Size = new System.Drawing.Size(182, 35);
+            this.buttonAbort.TabIndex = 0;
+            this.buttonAbort.Text = "Прервать загрузку";
+            this.buttonAbort.UseVisualStyleBackColor = false;
             // 
             // panelDragAndDrop
             // 
@@ -229,42 +265,6 @@ namespace LoaderYouTube
             this.labelExit.MouseEnter += new System.EventHandler(this.labelExit_MouseEnter);
             this.labelExit.MouseLeave += new System.EventHandler(this.labelExit_MouseLeave);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.buttonStartLoad);
-            this.panel1.Controls.Add(this.buttonAbort);
-            this.panel1.Location = new System.Drawing.Point(346, 642);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 68);
-            this.panel1.TabIndex = 4;
-            // 
-            // buttonAbort
-            // 
-            this.buttonAbort.AutoSize = true;
-            this.buttonAbort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.buttonAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbort.Font = new System.Drawing.Font("Lucida Bright", 15F);
-            this.buttonAbort.Location = new System.Drawing.Point(21, 17);
-            this.buttonAbort.Name = "buttonAbort";
-            this.buttonAbort.Size = new System.Drawing.Size(182, 35);
-            this.buttonAbort.TabIndex = 0;
-            this.buttonAbort.Text = "Прервать загрузку";
-            this.buttonAbort.UseVisualStyleBackColor = false;
-            // 
-            // buttonStartLoad
-            // 
-            this.buttonStartLoad.AutoSize = true;
-            this.buttonStartLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
-            this.buttonStartLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStartLoad.Font = new System.Drawing.Font("Lucida Bright", 15F);
-            this.buttonStartLoad.Location = new System.Drawing.Point(407, 17);
-            this.buttonStartLoad.Name = "buttonStartLoad";
-            this.buttonStartLoad.Size = new System.Drawing.Size(182, 35);
-            this.buttonStartLoad.TabIndex = 1;
-            this.buttonStartLoad.Text = "Начать загрузку";
-            this.buttonStartLoad.UseVisualStyleBackColor = false;
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Location = new System.Drawing.Point(104, 12);
@@ -394,17 +394,19 @@ namespace LoaderYouTube
             this.Font = new System.Drawing.Font("Lucida Bright", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartMenu";
+            this.Opacity = 0D;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Loader";
             this.panelWork.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelDiscription.ResumeLayout(false);
             this.panelDiscription.PerformLayout();
             this.panelTegs.ResumeLayout(false);
             this.panelTegs.PerformLayout();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

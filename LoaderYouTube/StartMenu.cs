@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LoaderYouTube.Classes;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LoaderYouTube
@@ -33,12 +28,16 @@ namespace LoaderYouTube
             base.WndProc(ref m);
         }
         #endregion
-        public StartMenu(Form form)
+        Authorization _authorization;
+        UserInfo _userInfo;
+        public StartMenu(Authorization authorization)
         {
-            this.Owner = form;
+            _authorization = authorization;
+            _userInfo = new UserInfo(_authorization.textBoxMail.Text, _authorization.textBoxPassword.Text);
+            //MessageBox.Show($"{_userInfo.Mail}, {_userInfo.Password}");
+
             InitializeComponent();
         }
-
 
         private void labelExit_MouseLeave(object sender, EventArgs e)
         {
